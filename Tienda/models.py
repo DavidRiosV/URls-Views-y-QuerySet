@@ -51,9 +51,7 @@ class Prenda(models.Model):
     
 # 6 Cesta
 class Cesta(models.Model):
-    usuario = models.OneToOneField(Usuario, on_delete= models.CASCADE,    null=True,
-    blank=True
-)
+    usuario = models.OneToOneField(Usuario, on_delete= models.CASCADE,null=True,blank=True)
     prenda = models.ManyToManyField(Prenda,through='ItemCesta')
 
     fecha_creacion=models.DateTimeField(auto_now_add=True)
